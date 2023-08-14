@@ -2,6 +2,7 @@
 #include <random>
 #include <vector>
 #include <unistd.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -39,6 +40,8 @@ string to_str( int c )
     return "insomnia 失眠者";
   case 8:
     return "villager 村民";
+  default:
+    return "";
   }
 }
 
@@ -59,6 +62,7 @@ int get_wolf( vector<int> chars )
     if ( chars[i] == wolf )
       return i;
   }
+  return -1;
 }
 
 char int2char( int i )
